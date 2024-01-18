@@ -21,7 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'broj_indeksa'
+        'broj_indeksa',
+        'jeAdmin',
     ];
 
     /**

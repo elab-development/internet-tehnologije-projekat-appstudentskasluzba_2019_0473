@@ -17,7 +17,7 @@ class PrijavaIspitaSeeder extends Seeder
         for ($i = 1; $i <= 6; $i++) {
             PrijavaIspita::factory()->create([
                 'predmet_id' => rand(1,6),
-                'user_id' => rand(1,6),
+                'user_id' => rand(2,6),
             ]);
         }
     }
