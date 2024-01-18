@@ -15,4 +15,13 @@ class PrijavaIspita extends Model
        'datum_i_vreme',
        'status_prijave',
     ];
+
+    public function predmet() {
+        return $this->belongsTo(Predmet::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
 }

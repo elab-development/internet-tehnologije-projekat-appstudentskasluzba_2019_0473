@@ -19,4 +19,8 @@ class Predmet extends Model
         'profesor',
         'asistenti',
     ];
+
+    public function prijaveIspita() {
+        return $this->hasMany(PrijavaIspita::class);
+    }
 }
