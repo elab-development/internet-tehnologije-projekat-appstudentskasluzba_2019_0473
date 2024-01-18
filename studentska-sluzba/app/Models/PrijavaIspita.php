@@ -14,6 +14,8 @@ class PrijavaIspita extends Model
     protected $fillable = [
        'datum_i_vreme',
        'status_prijave',
+       'predmet_id',
+       'user_id',
     ];
 
     public function predmet() {
