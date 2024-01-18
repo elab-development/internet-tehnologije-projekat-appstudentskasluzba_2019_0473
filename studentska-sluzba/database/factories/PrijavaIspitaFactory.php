@@ -26,7 +26,7 @@ class PrijavaIspitaFactory extends Factory
         return [
             'datum_i_vreme' => $this->faker->dateTimeBetween('-30 days', 'now'), 
             'status_prijave' => $this->faker->randomElement($statusi),
-            'predmeti_id' => Predmet::factory(),
+            'predmet_id' => Predmet::factory(),
             'user_id' => User::factory(),
         ];
     }

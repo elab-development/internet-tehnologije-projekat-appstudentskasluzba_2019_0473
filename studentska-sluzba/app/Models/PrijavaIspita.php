@@ -9,7 +9,7 @@ class PrijavaIspita extends Model
 {
     use HasFactory;
 
-    protected $table = 'prijava_ispita';
+    protected $table = 'prijave_ispita';
 
     protected $fillable = [
        'datum_i_vreme',
