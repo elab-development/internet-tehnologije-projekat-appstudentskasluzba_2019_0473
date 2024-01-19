@@ -14,6 +14,11 @@ class PredmetSeeder extends Seeder
      */
     public function run(): void
     {
-        Predmet::factory()->times(6)->create();
+
+        Predmet::factory()->create([
+            'naziv' => 'Економија',
+        ]);
+
+        Predmet::factory()->times(5)->create();
     }
 }

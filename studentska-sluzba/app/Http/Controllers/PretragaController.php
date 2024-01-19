@@ -6,11 +6,17 @@ use Illuminate\Http\Request;
 use App\Models\Predmet;
 use App\Http\Resources\PredmetResource;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
 
 class PretragaController extends Controller
 {
     public function pretragaPoNazivu(Request $request)
     {
+
+        $jeAdmin = Auth::user()->jeAdmin;
+        if(!$jeAdmin){
+            return response()->json(['Greska' => 'PRISTUP ZABRANJEN: Samo administrator moze pretrazivati predmete po nazivu!'], 403);
+        }
      
         $query = Predmet::query();
 

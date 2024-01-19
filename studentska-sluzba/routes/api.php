@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PredmetController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PrijavaIspitaController;
+use App\Http\Controllers\PretragaController;
 
 
 /*
@@ -35,6 +36,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::resource('users', UserController::class, ['only' => ['index', 'show']]);
     Route::post('/predmeti', [PredmetController::class,'store']);
     Route::delete('/predmeti/{id}', [PredmetController::class,'destroy']);
+    Route::get('/pretragaPoNazivu', [PretragaController::class, 'pretragaPoNazivu']);
 
     //Mogu samo studenti
     Route::post('/prijave_ispita', [PrijavaIspitaController::class,'store']);
