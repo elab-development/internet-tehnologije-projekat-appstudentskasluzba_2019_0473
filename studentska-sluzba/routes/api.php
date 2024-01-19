@@ -23,6 +23,8 @@ use App\Http\Controllers\PrijavaIspitaController;
 Route::post('/register',[AuthController::class,'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
+Route::post('/resetPassword', [AuthController::class,'forgotPassword']);
+
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
     //Mogu i studenti i administrator

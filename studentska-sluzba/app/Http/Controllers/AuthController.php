@@ -84,4 +84,26 @@ class AuthController extends Controller
         $request->user()->tokens()->delete();
         return response()->json(['Poruka'=> 'Uspesna odjava.']);
     }
+
+
+    
+    //fja za resetovanje lozinke ako je zaboravljena
+    public function forgotPassword(Request $request)
+    {   
+        $request->validate([
+            'email' => 'required',
+            'new_password' => 'required|string'
+        ]);
+    
+        $user = User::where('email', $request->email)->first();
+    
+        if ($user) {
+            $user->password = Hash::make($request->new_password);
+            $user->save();
+            
+            return response()->json(['Poruka' => 'Uspesno resetovana lozinka']);
+        }
+    
+        return response()->json(['Poruka' => 'Nije pronadjen korisnik'], 404);
+    }
 }
