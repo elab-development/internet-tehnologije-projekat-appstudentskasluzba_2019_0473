@@ -1,0 +1,30 @@
+.footer {
+    background-color: #173753;
+    color: #E0E0E0;
+    padding: 40px;
+    justify-content: space-between;
+  }
+  
+   
+  .contact-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+
+  .telefoni{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+  }
+
+  .telefoni p {
+    font-weight: lighter;
+    transition: color 0.5 ease-in-out;
+  }
+
+  .telefoni p:hover {
+    color: orange;
+  }
+  
