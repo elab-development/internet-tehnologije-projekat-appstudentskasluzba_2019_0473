@@ -19,15 +19,15 @@ const Predmeti = () => {
     }, [predmeti, isLoading, searchTerm, selektovanBrojESPB]);
   
     const applyFilters = (search, broj_espb_poena) => {
-      const filtered = predmeti.filter(predmet => {
-        return (
-          (search === '' || predmet.naziv.toLowerCase().includes(search.toLowerCase())) &&
-          (broj_espb_poena === '' || predmet.broj_esbp_poena === broj_espb_poena) 
-        );
-      });
-  
-      setFilteredPredmeti(filtered);
-    };
+        const filtered = predmeti.filter(predmet => {
+          return (
+            (search === '' || predmet.naziv.toLowerCase().includes(search.toLowerCase())) &&
+            (broj_espb_poena === '' || predmet.broj_esbp_poena === parseInt(broj_espb_poena))
+          );
+        });
+      
+        setFilteredPredmeti(filtered);
+      };
   
     const handleSearchChange = (e) => {
       setSearchTerm(e.target.value);
