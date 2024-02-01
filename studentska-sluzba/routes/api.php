@@ -26,10 +26,12 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::post('/resetPassword', [AuthController::class,'forgotPassword']);
 
+Route::get('predmeti', [PredmetController::class, 'index']);
+
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
     //Mogu i studenti i administrator
-    Route::get('predmeti', [PredmetController::class, 'index']);
+    
     Route::get('predmeti/{id}', [PredmetController::class, 'show']); 
 
     //Moze samo administrator

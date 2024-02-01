@@ -17,45 +17,45 @@ class PredmetFactory extends Factory
     public function definition(): array
     {
         $predmeti1 = [
-            'Основе информационо комуникационих технологија',
-            'Електронско пословање',
-            'Математика 1',
-            'Економија',
-            'Увод у информационе системе',
-            'Математика 2',
-            'Принципи програмирања',
+            'Osnove informaciono komunikacionih tehnologija',
+            'Elektronsko poslovanje',
+            'Matematika 1',
+            'Ekonomija',
+            'Uvod u informacione sisteme',
+            'Matematika 2',
+            'Principi programiranja',
         ];
-
+        
         $predmeti2 = [
-            'Теорија вероватноће',
-            'Програмирање 1',
-            'Архитектура рачунара и оперативни системи',
-            'Интеракција човек-рачунар',
-            'Структуре података и алгоритми',
-            'Cloud инфраструктура и сервиси',
-            'Базе података',
-            'Статистика'
+            'Teorija verovatnoće',
+            'Programiranje 1',
+            'Arhitektura računara i operativni sistemi',
+            'Interakcija čovek-računar',
+            'Strukture podataka i algoritmi',
+            'Cloud infrastruktura i servisi',
+            'Baze podataka',
+            'Statistika'
         ];
-
+        
         $predmeti3 = [
-            'Рачунарске мреже и телекомуникације',
-            'Пројектовање информационих система',
-            'Пројектовање софтвера',
-            'Теорија система',
-            'Операциона истраживања 1',
-            'Заштита рачунарских система',
-            'Операциона истраживања 2',
-            'Програмски језици',
-            'Вештачка интелигенција',
+            'Računarske mreže i telekomunikacije',
+            'Projektovanje informacionih sistema',
+            'Projektovanje softvera',
+            'Teorija sistema',
+            'Operaciona istraživanja 1',
+            'Zaštita računarskih sistema',
+            'Operaciona istraživanja 2',
+            'Programski jezici',
+            'Veštačka inteligencija',
         ];
-
+        
         $predmeti4 = [
-            'Моделовање пословних процеса',
-            'Интернет технологије',
-            'Пословна интелигенција',
-            'Методологија израде ИТ пројекта',
-            'Стручна пракса',
-            'Завршни рад'
+            'Modelovanje poslovnih procesa',
+            'Internet tehnologije',
+            'Poslovna inteligencija',
+            'Metodologija izrade IT projekta',
+            'Stručna praksa',
+            'Završni rad'
         ];
 
         $allPredmeti = array_merge($predmeti1, $predmeti2, $predmeti3, $predmeti4);
