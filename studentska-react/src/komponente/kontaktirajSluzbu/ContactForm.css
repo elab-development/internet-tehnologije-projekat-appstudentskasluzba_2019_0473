@@ -1,7 +1,13 @@
 .contact-form-container {
     text-align: center;
     margin: 50px auto;
-    max-width: 600px;
+    max-width: 700px;
+    color: white;
+    
+  }
+
+  body {
+    background-color:#7a92a6;
   }
   
   .contact-form-container h2 {

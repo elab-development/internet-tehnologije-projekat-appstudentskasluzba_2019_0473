@@ -5,10 +5,11 @@ import ContactForm from './komponente/kontaktirajSluzbu/ContactForm';
 import { useState } from 'react';
 import Footer from './komponente/Footer/Footer';
 import Navbar from './komponente/navbar/Navbar';
+import Molbe from './komponente/molbe/Molbe';
 
 function App() {
 
-  const [messages, setMessages] = useState([]);
+  const [molbe, setMolbe] = useState([]);
 
   return (
     <div className="App">
@@ -21,7 +22,11 @@ function App() {
         </Route>
         <Route
          path="/kontakt" 
-         element={<ContactForm messages={messages} setMessages={setMessages}/>} >
+         element={<ContactForm molbe={molbe} setMolbe={setMolbe}/>} >
+        </Route>
+        <Route
+         path="/molbe" 
+         element={<Molbe molbe={molbe} setMolbe={setMolbe}/>} >
         </Route>
         
       </Routes>

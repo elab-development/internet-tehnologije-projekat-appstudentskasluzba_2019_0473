@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ContactForm.css';
 
-const ContactForm = ({ messages, setMessages }) => {
+const ContactForm = ({ molbe, setMolbe }) => {
   const [ime, setIme] = useState('');
   const [email, setEmail] = useState('');
   const [molba, setMolba] = useState('');
@@ -11,13 +11,13 @@ const ContactForm = ({ messages, setMessages }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (ime && indeks && email && molba) {
-      const novaPoruka = {
+      const novaMolba = {
         ime,
         indeks,
         email,
         molba,
       };
-      setMessages([...messages, novaPoruka]);
+      setMolbe([...molbe, novaMolba]);
       setAlert('Molba uspešno poslata!');
       setIme('');
       setIndeks('');
