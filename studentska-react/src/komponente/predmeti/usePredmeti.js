@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useNekretnine = (url) => {
-    
+const usePredmeti = (url) => {
+
   const [predmeti, setPredmeti] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -26,4 +26,4 @@ const useNekretnine = (url) => {
 
 };
 
-export default useNekretnine;
+export default usePredmeti;
