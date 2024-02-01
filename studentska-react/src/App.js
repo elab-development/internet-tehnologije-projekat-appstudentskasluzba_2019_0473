@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Footer from './komponente/Footer/Footer';
 import Navbar from './komponente/navbar/Navbar';
 import Molbe from './komponente/molbe/Molbe';
+import Predmeti from './komponente/predmeti/Predmeti';
 
 function App() {
 
@@ -27,6 +28,10 @@ function App() {
         <Route
          path="/molbe" 
          element={<Molbe molbe={molbe} setMolbe={setMolbe}/>} >
+        </Route>
+        <Route
+         path="/predmeti" 
+         element={<Predmeti/>} >
         </Route>
         
       </Routes>
