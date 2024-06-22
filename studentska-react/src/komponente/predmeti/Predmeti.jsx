@@ -78,7 +78,6 @@ const Predmeti = () => {
             {Array.from({ length: pageCount }, (_, index) => (
                 <button
                 key={index}
-                className={index === currentPage ? 'active' : ''}
                 onClick={() => handlePageChange({ selected: index })}
                 >
                 {index + 1}

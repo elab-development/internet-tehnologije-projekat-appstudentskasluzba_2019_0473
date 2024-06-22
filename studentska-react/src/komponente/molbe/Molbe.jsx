@@ -18,7 +18,7 @@ const Molbe = ({ molbe, setMolbe }) => {
               <th>Ime studenta</th>
               <th>Broj indeksa</th>
               <th>Email</th>
-              <th>oMolba</th>
+              <th>Molba</th>
               <th>Operacije</th>  
             </tr>
           </thead>
