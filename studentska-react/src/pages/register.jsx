@@ -15,18 +15,51 @@ function Register() {
         }
     }
 
+    function validateEmail(email) {
+        const emailRegex = /^[^\s@]+@gmail\.com$/;
+        return emailRegex.test(email);
+    }
+
+    function validatePassword(password) {
+        return password.length > 6 && /\d/.test(password);
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
+        
+        if (!validateEmail(email)) {
+            toast.error('Email mora sadržati @gmail.com i biti validna email adresa.');
+            return;
+        }
+
+        if (!validatePassword(password)) {
+            toast.error('Password mora biti duži od 6 karaktera i sadržati bar jedan broj.');
+            return;
+        }
+
+        if (!email.includes('student') && !email.includes('sluzba')) {
+            toast.error('Email mora sadržati reč "student" ili "sluzba".');
+            return;
+        }
+
         // Čuvanje podataka u localStorage
         localStorage.setItem('user', JSON.stringify({ email, password }));
         // Resetovanje stanja emaila i passworda
         setEmail('');
         setPassword('');
-        // Simulacija uspešne prijave i redirekcija na početnu stranicu
-        setTimeout(() => {
+
+        // Provera email adrese i redirekcija na odgovarajuću stranicu
+        if (email.includes('student')) {
             toast.success('Dobri su podaci! Uspješno ste prijavljeni!');
-            navigate('/');
-        }, 3000);
+            setTimeout(() => {
+                navigate('/kontakt');
+            }, 3000);
+        } else if (email.includes('sluzba')) {
+            toast.success('Dobri su podaci! Uspješno ste prijavljeni!');
+            setTimeout(() => {
+                navigate('/molbe');
+            }, 3000);
+        }
     }
 
     return (
