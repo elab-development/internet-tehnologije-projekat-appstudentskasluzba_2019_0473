@@ -22,16 +22,13 @@ const Navbar = () => {
         <li>
           <Link to="/molbe">Molbe studenata</Link>
         </li>
-
         {localStorage.hasOwnProperty("user") ? (
           <li className="extra-bold text-white">
-            <button className="text-white text-bold" onClick={handleLogout}>
-              Logout
-            </button>
+            <Link onClick={handleLogout}>Logout</Link>
           </li>
         ) : (
           <li>
-            <Link to="/register">Log in</Link>
+            <Link to="/register">Login</Link>
           </li>
         )}
       </ul>

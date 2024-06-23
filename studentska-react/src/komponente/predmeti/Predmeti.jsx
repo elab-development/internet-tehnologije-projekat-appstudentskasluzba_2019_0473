@@ -92,7 +92,7 @@ const Predmeti = () => {
                 <th>Broj ESPB poena</th>
                 <th>Godina studiranja</th>
                 <th>Profesor</th>
-                <th>Asistenti</th>
+                <th>Asistent</th>
                 </tr>
             </thead>
             <tbody>
