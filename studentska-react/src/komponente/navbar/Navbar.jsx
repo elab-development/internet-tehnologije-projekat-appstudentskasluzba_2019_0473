@@ -1,36 +1,32 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Navbar.css";
+// Navbar.jsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../AuthContext'; // Uvezemo useAuth
 
 const Navbar = () => {
-  function handleLogout() {
-    localStorage.removeItem("user");
-  }
+  const { loggedIn } = useAuth(); // Uzimamo loggedIn status
 
   return (
     <nav>
+      {/* Prazan red za bolju čitljivost */}
+      
       <ul>
         <li>
           <Link to="/">Pocetna</Link>
         </li>
         <li>
-          <Link to="/predmeti">Lista predmeta</Link>
+          <Link to="/molbe">Molbe</Link>
         </li>
         <li>
-          <Link to="/kontakt">Kontaktiraj sluzbu</Link>
+          {loggedIn ? (
+            <Link to="/kontakt">Kontaktiraj nas</Link>
+          ) : (
+            <Link to="/register">Prijavi se</Link>
+          )}
         </li>
         <li>
-          <Link to="/molbe">Molbe studenata</Link>
+          <Link to="/predmeti">Predmeti</Link>
         </li>
-        {localStorage.hasOwnProperty("user") ? (
-          <li className="extra-bold text-white">
-            <Link onClick={handleLogout}>Logout</Link>
-          </li>
-        ) : (
-          <li>
-            <Link to="/register">Login</Link>
-          </li>
-        )}
       </ul>
     </nav>
   );
