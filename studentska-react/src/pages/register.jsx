@@ -55,7 +55,7 @@ function Register() {
         setEmail('');
         setPassword('');
 
-        // Ako email sadrzi 'student' ili 'sluzba', redirekcija na odgovarajuću stranicu
+        // Ako email sadrzi 'student' ili 'sluzba' , redirekcija na odgovarajuću stranicu
         if (email.includes('student')) {
             toast.success('Dobri su podaci! Uspješno ste prijavljeni!');
             setTimeout(() => {
