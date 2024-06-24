@@ -33,7 +33,7 @@ function Register() {
         }
 
         if (!validatePassword(password)) {
-            toast.error('Password mora biti duži od 6 karaktera i sadržati bar jedan broj.');
+            toast.error('Password mora biti duži od 6 karaktera i sadržati makar jedan broj.');
             return;
         }
 
@@ -48,7 +48,7 @@ function Register() {
         setEmail('');
         setPassword('');
 
-        // Provera email adrese i redirekcija na odgovarajuću stranicu
+        // Provera email adrese ako sadrzi 'student' ili 'sluzba' i redirekcija na odgovarajuću stranicu
         if (email.includes('student')) {
             toast.success('Dobri su podaci! Uspješno ste prijavljeni!');
             setTimeout(() => {
