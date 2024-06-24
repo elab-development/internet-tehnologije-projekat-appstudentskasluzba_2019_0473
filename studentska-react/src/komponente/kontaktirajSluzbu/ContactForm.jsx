@@ -1,15 +1,19 @@
+// ContactForm.jsx
 import React, { useState } from 'react';
-import './ContactForm.css';
+import { AuthProvider } from '../../AuthContext'; // Import AuthProvider-a
+import './ContactForm.css'; // Import stilova
 
 const ContactForm = ({ molbe, setMolbe }) => {
-  const [ime, setIme] = useState('');
-  const [email, setEmail] = useState('');
-  const [molba, setMolba] = useState('');
-  const [indeks, setIndeks] = useState('');
-  const [alert, setAlert] = useState('');
+  const [ime, setIme] = useState(''); // Stanje za ime
+  const [email, setEmail] = useState(''); // Stanje za email
+  const [molba, setMolba] = useState(''); // Stanje za molbu
+  const [indeks, setIndeks] = useState(''); // Stanje za indeks
+  const [alert, setAlert] = useState(''); // Stanje za alert poruku
+  const { loggedIn } = useAuth(); // Dohvatamo loggedIn status iz AuthContext-a
 
+  // Funkcija za rukovanje slanjem forme
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Sprečavanje podrazumevanog ponašanja forme
     if (ime && indeks && email && molba) {
       const novaMolba = {
         ime,
@@ -17,20 +21,23 @@ const ContactForm = ({ molbe, setMolbe }) => {
         email,
         molba,
       };
-      setMolbe([...molbe, novaMolba]);
-      setAlert('Molba uspešno poslata!');
+      setMolbe([...molbe, novaMolba]); // Dodavanje nove molbe u stanje
+      setAlert('Molba uspešno poslata!'); // Postavljanje alert poruke
+      // Resetovanje polja forme
       setIme('');
       setIndeks('');
       setEmail('');
       setMolba('');
     } else {
-      setAlert('Molimo Vas da popunite sva polja.');
+      setAlert('Molimo Vas da popunite sva polja.'); // Postavljanje alert poruke za nepopunjena polja
     }
   };
 
   return (
-      <div className="contact-form-container">
-        <h2>Kontaktirajte nas</h2>
+    <div className="contact-form-container">
+      <h2>Kontaktirajte nas</h2>
+      {loggedIn ? (
+        // Forma za kontakt koja se prikazuje ako je korisnik prijavljen
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="input-container">
             <label htmlFor="ime">Ime i prezime:</label>
@@ -79,8 +86,12 @@ const ContactForm = ({ molbe, setMolbe }) => {
             Pošalji poruku
           </button>
         </form>
-        {alert && <div className="alert">{alert}</div>}
-      </div>
+      ) : (
+        // Poruka koja se prikazuje ako korisnik nije prijavljen
+        <p>Morate biti prijavljeni da biste popunili kontakt formu.</p>
+      )}
+      {alert && <div className="alert">{alert}</div>} {/* Prikazivanje alert poruke */}
+    </div>
   );
 };
 
